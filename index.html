@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <h1>Jam</h1>
+    <div class="container">
+        <p id="jam"></p>
+        <p> : </p>
+        <p id="menit"></p>
+        <p> : </p>
+        <p id="detik"></p>
+    </div>
+</body>
+
+<script>
+    window.onload = function () {
+        function timeUpdate() {
+            const now = window.electron.getTime();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+
+            document.getElementById("jam").innerText = `${hours}`;
+            document.getElementById("menit").innerText = `${minutes}`;
+            document.getElementById("detik").innerText = `${seconds}`;
+        }
+        
+        setInterval(timeUpdate, 1000);
+    }
+</script>
+
+</html>

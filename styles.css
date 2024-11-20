@@ -1,0 +1,25 @@
+*{
+    /* background-color: aliceblue; */
+    margin: 0;
+    padding: 0;
+    /* opacity: 0.5; */
+}
+
+html{
+    text-align: center;
+    user-select: none;
+}
+
+h1{
+    color: white;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.container p{
+    color: white;
+}
